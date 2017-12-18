@@ -1,2 +1,2 @@
-# anslutningsl-get-api
+# anslutningslaget-api
 Webapplikation med API för verksamhetsmässigt anslutningsläge.
