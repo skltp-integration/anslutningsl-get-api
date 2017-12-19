@@ -18,22 +18,16 @@ public class AnslutningDTO {
     private String vardenhet;
     private String vardgivare;
 
-    //todo for test
-    public AnslutningDTO() {
-        this.kallsystem = "SE2321000164-9999";
-        this.ketogori = "1";
-        this.organisatoriskenhet = "SE2321000164-1111111111111";
-        this.tjanstekontrakt = "urn:riv:clinicalprocess:healthcond:description:GetCareDocumentationResponder:2";
-        this.ursprungligkonsument = "T_SERVICES_SE165565594230-6666";
-        this.vardenhet = "SE2321000164-1234567891012";
-        this.vardgivare = "SE2321000164-1234567891033";
-    }
-
-    public String randomString() {
-        byte[] array = new byte[7]; // length is bounded by 7
-        new Random().nextBytes(array);
-        return new String(array, Charset.forName("UTF-8"));
-    }
+//    //todo for test
+//    public AnslutningDTO() {
+//        this.kallsystem = "SE2321000164-9999";
+//        this.ketogori = "1";
+//        this.organisatoriskenhet = "SE2321000164-1111111111111";
+//        this.tjanstekontrakt = "urn:riv:clinicalprocess:healthcond:description:GetCareDocumentationResponder:2";
+//        this.ursprungligkonsument = "T_SERVICES_SE165565594230-6666";
+//        this.vardenhet = "SE2321000164-1234567891012";
+//        this.vardgivare = "SE2321000164-1234567891033";
+//    }
 
     public String getKallsystem() {
         return kallsystem;

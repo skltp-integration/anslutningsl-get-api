@@ -46,7 +46,15 @@ public class AnslutningController {
     private List<AnslutningDTO> convertToDTO(List<Anslutning> all) {
         List<AnslutningDTO> dtos = new LinkedList<>();
         for(Anslutning a:all){
-            dtos.add(new AnslutningDTO());
+            AnslutningDTO dto = new AnslutningDTO();
+            dto.setKallsystem(a.getKallsystem().getName());
+            dto.setKetogori(a.getKategori().getName());
+            dto.setOrganisatoriskenhet(a.getOrganisatoriskenhet().getName());
+            dto.setTjanstekontrakt(a.getTjanstekontrakt().getName());
+            dto.setUrsprungligkonsument(a.getUrsprungligkonsument().getName());
+            dto.setVardenhet(a.getVardenhet().getName());
+            dto.setVardgivare(a.getVardgivare().getName());
+            dtos.add(dto);
         }
         return dtos;
 
