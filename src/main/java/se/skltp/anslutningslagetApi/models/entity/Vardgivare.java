@@ -1,4 +1,4 @@
-package se.skltp.anslutningslgetApi.models.entity;
+package se.skltp.anslutningslagetApi.models.entity;
 
 import javax.persistence.*;
 

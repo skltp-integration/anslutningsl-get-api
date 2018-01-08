@@ -1,10 +1,10 @@
-package se.skltp.anslutningslgetApi.models.entity;
+package se.skltp.anslutningslagetApi.models.entity;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "vardenhet")
-public class Vardenhet {
+@Table(name = "organisatoriskenhet")
+public class Tjanstekontrakt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

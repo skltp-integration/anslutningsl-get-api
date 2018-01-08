@@ -1,6 +1,4 @@
-package se.skltp.anslutningslgetApi.models.entity;
-
-import org.omg.CORBA.PRIVATE_MEMBER;
+package se.skltp.anslutningslagetApi.models.entity;
 
 import javax.persistence.*;
 

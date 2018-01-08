@@ -1,33 +1,27 @@
-package se.skltp.anslutningslgetApi.web.rest.v1.dto;
+package se.skltp.anslutningslagetApi.service.impl;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-
-import java.nio.charset.Charset;
-import java.util.Random;
-
-@JacksonXmlRootElement(localName = "anslutning")
-@JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class AnslutningDTO {
-
+public class AnslutningCriteria {
     private String kallsystem;
-    private String ketogori;
+    private String kategori;
     private String organisatoriskenhet;
     private String tjanstekontrakt;
     private String ursprungligkonsument;
     private String vardenhet;
     private String vardgivare;
 
-//    //todo for test
-//    public AnslutningDTO() {
-//        this.kallsystem = "SE2321000164-9999";
-//        this.ketogori = "1";
-//        this.organisatoriskenhet = "SE2321000164-1111111111111";
-//        this.tjanstekontrakt = "urn:riv:clinicalprocess:healthcond:description:GetCareDocumentationResponder:2";
-//        this.ursprungligkonsument = "T_SERVICES_SE165565594230-6666";
-//        this.vardenhet = "SE2321000164-1234567891012";
-//        this.vardgivare = "SE2321000164-1234567891033";
-//    }
+    public AnslutningCriteria(String kallsystem, String kategori, String organisatoriskenhet, String tjanstekontrakt, String ursprungligkonsument, String vardenhet, String vardgivare) {
+        this.kallsystem = kallsystem;
+        this.kategori = kategori;
+        this.organisatoriskenhet = organisatoriskenhet;
+        this.tjanstekontrakt = tjanstekontrakt;
+        this.ursprungligkonsument = ursprungligkonsument;
+        this.vardenhet = vardenhet;
+        this.vardgivare = vardgivare;
+    }
+
+    public AnslutningCriteria(){
+
+    }
 
     public String getKallsystem() {
         return kallsystem;
@@ -37,12 +31,12 @@ public class AnslutningDTO {
         this.kallsystem = kallsystem;
     }
 
-    public String getKetogori() {
-        return ketogori;
+    public String getKategori() {
+        return kategori;
     }
 
-    public void setKetogori(String ketogori) {
-        this.ketogori = ketogori;
+    public void setKategori(String kategori) {
+        this.kategori = kategori;
     }
 
     public String getOrganisatoriskenhet() {
@@ -83,5 +77,11 @@ public class AnslutningDTO {
 
     public void setVardgivare(String vardgivare) {
         this.vardgivare = vardgivare;
+    }
+
+    public boolean isEmpty() {
+        return getKallsystem() ==  null && getKategori() == null &&
+                getOrganisatoriskenhet() == null && getTjanstekontrakt() == null &&
+                getUrsprungligkonsument() == null && getVardenhet() == null && getVardgivare() == null;
     }
 }

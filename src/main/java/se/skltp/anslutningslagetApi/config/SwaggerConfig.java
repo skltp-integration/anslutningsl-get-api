@@ -1,4 +1,4 @@
-package se.skltp.anslutningslgetApi.config;
+package se.skltp.anslutningslagetApi.config;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +21,7 @@ public class SwaggerConfig {
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("se.skltp.anslutningslgetApi.web.rest.v1.api"))
+                .apis(RequestHandlerSelectors.basePackage("se.skltp.anslutningslagetApi.web.rest.v1.api"))
                 .paths(PathSelectors.any())
                 .build()
                 .pathProvider(new BaseVersionProvider())
@@ -30,8 +30,8 @@ public class SwaggerConfig {
 
     private ApiInfo metadata() {
         return new ApiInfoBuilder()
-                .title("Anslutningslget Api")
-                .description("Anslutningslget Api")
+                .title("Anslutningslaget Api")
+                .description("Anslutningslaget Api")
                 .version("1.0.0")
                 .build();
     }

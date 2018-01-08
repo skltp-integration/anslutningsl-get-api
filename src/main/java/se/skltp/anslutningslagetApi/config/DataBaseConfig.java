@@ -1,4 +1,4 @@
-package se.skltp.anslutningslgetApi.config;
+package se.skltp.anslutningslagetApi.config;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +23,10 @@ public class DataBaseConfig {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(env.getProperty("anslutningslget.db.driver"));
-        dataSource.setUrl(env.getProperty("anslutningslget.db.url"));
-        dataSource.setUsername(env.getProperty("anslutningslget.db.username"));
-        dataSource.setPassword(env.getProperty("anslutningslget.db.password"));
+        dataSource.setDriverClassName(env.getProperty("anslutningslaget.db.driver"));
+        dataSource.setUrl(env.getProperty("anslutningslaget.db.url"));
+        dataSource.setUsername(env.getProperty("anslutningslaget.db.username"));
+        dataSource.setPassword(env.getProperty("anslutningslaget.db.password"));
         return dataSource;
     }
 
@@ -42,7 +42,7 @@ public class DataBaseConfig {
 
 
         entityManagerFactory.setPackagesToScan(
-                env.getProperty("anslutningslget.entitymanager.packages.to.scan"));
+                env.getProperty("anslutningslaget.entitymanager.packages.to.scan"));
 
         // Vendor adapter
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -52,13 +52,13 @@ public class DataBaseConfig {
         Properties additionalProperties = new Properties();
         additionalProperties.put(
                 "hibernate.dialect",
-                env.getProperty("anslutningslget.hibernate.dialect"));
+                env.getProperty("anslutningslaget.hibernate.dialect"));
         additionalProperties.put(
                 "hibernate.show_sql",
-                env.getProperty("anslutningslget.hibernate.show_sql"));
+                env.getProperty("anslutningslaget.hibernate.show_sql"));
         additionalProperties.put(
                 "hibernate.hbm2ddl.auto",
-                env.getProperty("anslutningslget.hibernate.hbm2ddl.auto"));
+                env.getProperty("anslutningslaget.hibernate.hbm2ddl.auto"));
         entityManagerFactory.setJpaProperties(additionalProperties);
 
 
