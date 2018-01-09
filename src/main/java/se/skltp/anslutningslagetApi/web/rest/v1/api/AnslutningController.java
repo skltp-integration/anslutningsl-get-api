@@ -34,9 +34,9 @@ public class AnslutningController {
 
 
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "page", dataType = "integer", paramType = "query",
+            @ApiImplicitParam(name = "page", dataType = "int", paramType = "query",
                     value = "Paginering - sidnummer (0..N)"),
-            @ApiImplicitParam(name = "size", dataType = "integer", paramType = "query",
+            @ApiImplicitParam(name = "size", dataType = "int", paramType = "query",
                     value = "Paginering - antalet objekt per sida."),
             @ApiImplicitParam(name = "sort", allowMultiple = true, dataType = "string", paramType = "query",
                     value = "Fältnamnet att sortera på och i vilken riktning att sortera(ASC|DESC). Ex.: sort=name,DESC.")})
