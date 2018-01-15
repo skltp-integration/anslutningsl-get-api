@@ -79,6 +79,27 @@
 
     </dependencies>
 
+
+    <scm>
+        <connection>scm:git:https://github.com/skltp-integration/anslutningslaget-api.git</connection>
+        <developerConnection>scm:git:https://github.com/skltp-integration/anslutningslaget-api.git</developerConnection>
+        <url>https://github.com/skltp-integration/anslutningslaget-api.git</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>basefarm-nexus</id>
+            <name>RIVTA-Releases</name>
+            <url>http://ine-dib-nexus1.in1.sth.basefarm.net:8081/repository/RIVTA-Releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>basefarm-nexus</id>
+            <name>RIVTA-Snapshots</name>
+            <url>http://ine-dib-nexus1.in1.sth.basefarm.net:8081/repository/RIVTA-Snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <plugins>
             <plugin>
