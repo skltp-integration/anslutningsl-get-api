@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>se.skltp.anslutningslaget</groupId>
     <artifactId>anslutningslaget-api</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0-RC1</version>
     <packaging>war</packaging>
 
     <name>anslutningslaget-api</name>
@@ -15,7 +14,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.9.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath /> <!-- lookup parent from repository -->
     </parent>
 
     <properties>
@@ -84,7 +83,7 @@
         <connection>scm:git:https://github.com/skltp-integration/anslutningslaget-api.git</connection>
         <developerConnection>scm:git:https://github.com/skltp-integration/anslutningslaget-api.git</developerConnection>
         <url>https://github.com/skltp-integration/anslutningslaget-api.git</url>
-        <tag>HEAD</tag>
+        <tag>v1.0.0-RC1</tag>
     </scm>
 
     <distributionManagement>
