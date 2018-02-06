@@ -3,7 +3,7 @@ package se.skltp.anslutningslagetApi.models.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "organisatoriskenhet")
+@Table(name = "tjanstekontrakt")
 public class Tjanstekontrakt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
