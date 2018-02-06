@@ -31,7 +31,7 @@ public class SwaggerConfig {
     private ApiInfo metadata() {
         return new ApiInfoBuilder()
                 .title("Anslutningslaget Api")
-                .description("Anslutningslaget Api")
+                .description("AnslutningslagetApi visar information om vilka vårdgivare och vårdenheter som utbyter information genom tjänsteplattformen.")
                 .version("1.0.0")
                 .build();
     }

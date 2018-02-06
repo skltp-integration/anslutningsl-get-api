@@ -1,6 +1,7 @@
 package se.skltp.anslutningslagetApi.models.entity;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "anslutning")
@@ -40,6 +41,13 @@ public class Anslutning {
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="vardenhet")
     private Vardenhet vardenhet;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date forstaAnslutningsDatum;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date senasteAnslutningsDatum;
+
 
 
     public long getId() {
@@ -105,4 +113,21 @@ public class Anslutning {
     public void setVardenhet(Vardenhet vardenhet) {
         this.vardenhet = vardenhet;
     }
+
+    public Date getForstaAnslutningsDatum() {
+        return forstaAnslutningsDatum;
+    }
+
+    public Date getSenasteAnslutningsDatum() {
+        return senasteAnslutningsDatum;
+    }
+
+    public void setForstaAnslutningsDatum(Date forstaAnslutningsDatum) {
+        this.forstaAnslutningsDatum = forstaAnslutningsDatum;
+    }
+
+    public void setSenasteAnslutningsDatum(Date senasteAnslutningsDatum) {
+        this.senasteAnslutningsDatum = senasteAnslutningsDatum;
+    }
+
 }

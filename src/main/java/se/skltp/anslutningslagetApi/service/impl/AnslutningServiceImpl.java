@@ -50,5 +50,14 @@ public class AnslutningServiceImpl extends SpecificationBuilder<Anslutning, Ansl
         if (criteria.getKallsystem() != null) {
             specifications.add(like("kallsystem", criteria.getKallsystem()));
         }
+
+        if(criteria.getForstaAnslutningsInterval() != null){
+            specifications.add(mellanDates("forstaAnslutningsDatum", criteria.getForstaAnslutningsInterval().getFirst(), criteria.getForstaAnslutningsInterval().getSecond()));
+        }
+
+        if(criteria.getSenasteAnslutningsInterval() != null){
+            specifications.add(mellanDates("senasteAnslutningsDatum", criteria.getSenasteAnslutningsInterval().getFirst(), criteria.getSenasteAnslutningsInterval().getSecond()));
+        }
+
     }
 }

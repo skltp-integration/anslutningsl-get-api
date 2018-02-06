@@ -14,6 +14,9 @@ public class AnslutningDTO {
     private String ursprungligkonsument;
     private String vardenhet;
     private String vardgivare;
+    private String forstaAnslutningsDatum;
+    private String senasteAnslutningsDatum;
+
 
 
     public String getKallsystem() {
@@ -71,4 +74,20 @@ public class AnslutningDTO {
     public void setVardgivare(String vardgivare) {
         this.vardgivare = vardgivare;
     }
+    public String getForstaAnslutningsDatum() {
+        return forstaAnslutningsDatum;
+    }
+
+    public void setForstaAnslutningsDatum(String forstaAnslutningsDatum) {
+        this.forstaAnslutningsDatum = forstaAnslutningsDatum;
+    }
+
+    public String getSenasteAnslutningsDatum() {
+        return senasteAnslutningsDatum;
+    }
+
+    public void setSenasteAnslutningsDatum(String senasteAnslutningsDatum) {
+        this.senasteAnslutningsDatum = senasteAnslutningsDatum;
+    }
+
 }

@@ -1,5 +1,7 @@
 package se.skltp.anslutningslagetApi.service.impl;
 
+import java.util.Date;
+
 public class AnslutningCriteria {
     private String kallsystem;
     private String kategori;
@@ -8,8 +10,13 @@ public class AnslutningCriteria {
     private String ursprungligkonsument;
     private String vardenhet;
     private String vardgivare;
+    private Pair<Date, Date> forstaAnslutningsInterval;
+    private Pair<Date, Date> senasteAnslutningsInterval;
 
-    public AnslutningCriteria(String kallsystem, String kategori, String organisatoriskenhet, String tjanstekontrakt, String ursprungligkonsument, String vardenhet, String vardgivare) {
+
+    public AnslutningCriteria(String kallsystem, String kategori, String organisatoriskenhet,
+                              String tjanstekontrakt, String ursprungligkonsument, String vardenhet,
+                              String vardgivare, Pair<Date, Date> forstaAnslutningsInterval, Pair<Date, Date> senasteAnslutningsInterval) {
         this.kallsystem = kallsystem;
         this.kategori = kategori;
         this.organisatoriskenhet = organisatoriskenhet;
@@ -17,6 +24,9 @@ public class AnslutningCriteria {
         this.ursprungligkonsument = ursprungligkonsument;
         this.vardenhet = vardenhet;
         this.vardgivare = vardgivare;
+        this.forstaAnslutningsInterval = forstaAnslutningsInterval;
+        this.senasteAnslutningsInterval = senasteAnslutningsInterval;
+
     }
 
     public AnslutningCriteria(){
@@ -79,9 +89,29 @@ public class AnslutningCriteria {
         this.vardgivare = vardgivare;
     }
 
+    public Pair<Date, Date> getForstaAnslutningsInterval() {
+        return forstaAnslutningsInterval;
+    }
+
+    public void setForstaAnslutningsInterval(Pair <Date, Date> forstaAnslutningsInterval) {
+        this.forstaAnslutningsInterval = forstaAnslutningsInterval;
+    }
+
+    public Pair<Date, Date> getSenasteAnslutningsInterval() {
+        return senasteAnslutningsInterval;
+    }
+
+    public void setSenasteAnslutningsInterval(Pair<Date, Date> senasteAnslutningsInterval) {
+        this.senasteAnslutningsInterval = senasteAnslutningsInterval;
+    }
+
+
+
     public boolean isEmpty() {
         return getKallsystem() ==  null && getKategori() == null &&
                 getOrganisatoriskenhet() == null && getTjanstekontrakt() == null &&
-                getUrsprungligkonsument() == null && getVardenhet() == null && getVardgivare() == null;
+                getUrsprungligkonsument() == null && getVardenhet() == null && getVardgivare() == null &&
+                forstaAnslutningsInterval == null && senasteAnslutningsInterval == null;
+
     }
 }
