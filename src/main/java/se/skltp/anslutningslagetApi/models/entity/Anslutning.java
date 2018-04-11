@@ -22,7 +22,7 @@ public class Anslutning {
 
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="organisatoriskenhet")
-     private Organisatoriskenhet organisatoriskenhet;
+    private Organisatoriskenhet organisatoriskenhet;
 
 
     @ManyToOne(fetch=FetchType.EAGER)

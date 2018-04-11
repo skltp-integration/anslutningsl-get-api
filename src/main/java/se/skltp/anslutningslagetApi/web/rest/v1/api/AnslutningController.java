@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import se.skltp.anslutningslagetApi.models.entity.Anslutning;
+import se.skltp.anslutningslagetApi.models.entity.GrupperadAnslutning;
 import se.skltp.anslutningslagetApi.service.AnslutningService;
+import se.skltp.anslutningslagetApi.service.GrupperadAnslutningService;
 import se.skltp.anslutningslagetApi.service.impl.AnslutningCriteria;
 import se.skltp.anslutningslagetApi.service.impl.DateServiceImpl;
 import se.skltp.anslutningslagetApi.service.impl.Pair;
@@ -32,6 +34,9 @@ import java.util.List;
 public class AnslutningController {
     @Autowired
     private AnslutningService anslutningService;
+
+    @Autowired
+    private GrupperadAnslutningService grupperadAnslutningService;
 
     @Autowired
     private DateServiceImpl dateService;
@@ -81,24 +86,24 @@ public class AnslutningController {
         Pair<Date, Date> forstaAnslutningsInterval = dateService.parseInterval(forstaAnslutningsDatum);
         Pair<Date, Date> senasteAnslutningsInterval = dateService.parseInterval(senasteAnslutningsDatum);
 
-        return convertToDTO(anslutningService.findAll(new AnslutningCriteria
+        return convertToDTO(grupperadAnslutningService.findAll(new AnslutningCriteria
                 (kallsystem, kategori, organisatoriskenhet,
                         tjanstekontrakt, ursprungligkonsument, vardenhet,
                         vardgivare, forstaAnslutningsInterval, senasteAnslutningsInterval), pageRequest));
 
     }
 
-    private List<AnslutningDTO> convertToDTO(List<Anslutning> all) {
+    private List<AnslutningDTO> convertToDTO(List<GrupperadAnslutning> all) {
         List<AnslutningDTO> dtos = new LinkedList<>();
-        for(Anslutning a : all){
+        for(GrupperadAnslutning a : all){
             AnslutningDTO dto = new AnslutningDTO();
-            dto.setKallsystem(a.getKallsystem().getName());
-            dto.setKategori(a.getKategori().getName());
-            dto.setOrganisatoriskenhet(a.getOrganisatoriskenhet().getName());
-            dto.setTjanstekontrakt(a.getTjanstekontrakt().getName());
-            dto.setUrsprungligkonsument(a.getUrsprungligkonsument().getName());
-            dto.setVardenhet(a.getVardenhet().getName());
-            dto.setVardgivare(a.getVardgivare().getName());
+            dto.setKallsystem(a.getKallsystem());
+            dto.setKategori(a.getKategori());
+            dto.setOrganisatoriskenhet(a.getOrganisatoriskenhet());
+            dto.setTjanstekontrakt(a.getTjanstekontrakt());
+            dto.setUrsprungligkonsument(a.getUrsprungligkonsument());
+            dto.setVardenhet(a.getVardenhet());
+            dto.setVardgivare(a.getVardgivare());
             dto.setForstaAnslutningsDatum(dateService.df_long.format(a.getForstaAnslutningsDatum()));
             dto.setSenasteAnslutningsDatum(dateService.df_long.format(a.getSenasteAnslutningsDatum()));
 

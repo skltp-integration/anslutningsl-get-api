@@ -28,7 +28,11 @@ public abstract class SpecificationBuilder<T, S> {
 
 
 
-     protected Specification<T> like(final String tableName, final String value) {
+    protected Specification<T> likeString(final String column, final String value) {
+        return (root, query, builder) -> builder.equal(root.get(column), value);
+    }
+
+    protected Specification<T> like(final String tableName, final String value) {
         return (root, query, builder) -> builder.equal( root.join(tableName, JoinType.LEFT).get("name"), value);
     }
 
